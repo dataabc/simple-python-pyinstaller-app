@@ -22,7 +22,7 @@ ls'''
     stage('test') {
       agent {
         docker {
-          image 'pytest'
+          image 'grihabor/pytest'
         }
 
       }
