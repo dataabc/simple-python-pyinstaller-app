@@ -19,5 +19,17 @@ ls'''
       }
     }
 
+    stage('test') {
+      agent {
+        docker {
+          image 'qnib/pytest'
+        }
+
+      }
+      steps {
+        sh 'pytest --verbose --junit-xml test-reports/results.xml sources/test_calc.py'
+      }
+    }
+
   }
 }
